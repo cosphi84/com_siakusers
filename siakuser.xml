@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="component" method="upgrade" version="3.9">
-    <name>com_siakusers</name>
+    <name>com_siakuser</name>
     <creationDate>30 Juli 2022</creationDate>
     <author>Risam, S.T</author>
     <authorEmail>risam1984@gmail.com</authorEmail>
@@ -8,7 +8,7 @@
     <copyright>Copyright (C) Fakultas Teknik UNTAG Cirebon</copyright>
     <license>UNTAG Cirebon internal use Only!</license>
     <version>0.0.1</version>
-    <description>COM_SIAKUSERS_XML_DESCRIPTION</description>
+    <description>COM_SIAKUSER_XML_DESCRIPTION</description>
     <scriptfile>script.php</scriptfile>
     <install>
         <sql>
@@ -38,11 +38,11 @@
         <filename>router.php</filename>
     </files>
 
-    <languages folder="languages">
-        <language tag="id-ID">site/id-ID.com_siakta.ini</language>
+    <languages folder="translations">
+        <language tag="id-ID">site/id-ID.com_siakuser.ini</language>
     </languages>
 
-    <media destination="com_siakta" folder="media">
+    <media destination="com_siakuser" folder="media">
         <folder>css</folder>
         <folder>js</folder>
         <folder>images</folder>
@@ -50,9 +50,8 @@
 
     
     <administration>
-        <menu>COM_SIAKTA_MENU</menu>
-    
-        <files folder="administrator">
+        <menu>COM_SIAKUSER_MENU</menu>
+        <files folder="admin">
             <folder>controllers</folder>
             <folder>models</folder>
             <folder>views</folder>
@@ -66,10 +65,9 @@
             <filename>config.xml</filename>
         </files>
 
-        <languages folder="languages">
-            <language tag="id-ID">admin/id-ID.com_siakta.ini</language>
-            <language tag="id-ID">admin/id-ID.com_siakta.sys.ini</language>
-        </languages>
-    
+        <languages folder="translations">
+            <language tag="id-ID">admin/id-ID.com_siakuser.ini</language>
+            <language tag="id-ID">admin/id-ID.com_siakuser.sys.ini</language>
+        </languages>    
     </administration>
 </extension>

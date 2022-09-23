@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <fieldset
+        name        = "COM_SIAKUSER_CONFIG"
+        label       = "COM_SIAKTA_CONFIG_CFG_LABEL"
+        description = "COM_SIAKTA_CONFIG_CFG_DESC"
+    >
+        <field 
+            name    = "frmEnable"
+            type    = "radio"
+            default = "0"
+            label   = "COM_SIAKUSER_CONFIG_MODUL_ENABLE_LABEL"
+            description = ""
+            required    = "true"
+            class       = "btn-group btn-group-yesno"
+        >
+            <option value = "1">JYES</option>
+            <option value = "0">JNO</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+        name        = "permission"
+        label       = "JCONFIG_PERMISSIONS_LABEL"
+        description = "JCONFIG_PERMISSIONS_DESC"
+    >
+        <field 
+            name        = "rules"
+            type        = "rules"
+            label       = "JCONFIG_PERMISSIONS_LABEL"
+            class       = "input"
+            validate    = "rules"
+            filter      = "rules"
+            component   = "com_siakuser"
+            section     = "component"
+        />
+    </fieldset>
+</config>
