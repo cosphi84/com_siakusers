@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="component" method="upgrade" version="3.9">
+    <name>com_siakusers</name>
+    <creationDate>30 Juli 2022</creationDate>
+    <author>Risam, S.T</author>
+    <authorEmail>risam1984@gmail.com</authorEmail>
+    <authorUrl>www.ft-untagcirebon.ac.id</authorUrl>
+    <copyright>Copyright (C) Fakultas Teknik UNTAG Cirebon</copyright>
+    <license>UNTAG Cirebon internal use Only!</license>
+    <version>0.0.1</version>
+    <description>COM_SIAKUSERS_XML_DESCRIPTION</description>
+    <scriptfile>script.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <files folder="site">
+        <folder>controllers</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+        <filename>controller.php</filename>
+        <filename>siakta.php</filename>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+    </files>
+
+    <languages folder="languages">
+        <language tag="id-ID">site/id-ID.com_siakta.ini</language>
+    </languages>
+
+    <media destination="com_siakta" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>images</folder>
+    </media>
+
+    
+    <administration>
+        <menu>COM_SIAKTA_MENU</menu>
+    
+        <files folder="administrator">
+            <folder>controllers</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+            <folder>helpers</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <filename>controller.php</filename>
+            <filename>siakta.php</filename>
+            <filename>index.html</filename>
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+        </files>
+
+        <languages folder="languages">
+            <language tag="id-ID">admin/id-ID.com_siakta.ini</language>
+            <language tag="id-ID">admin/id-ID.com_siakta.sys.ini</language>
+        </languages>
+    
+    </administration>
+</extension>
