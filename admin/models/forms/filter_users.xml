@@ -24,6 +24,7 @@
             type    = "prodi"
             label   = "COM_SIAKUSER_FILTER_PRODI_FIELD"
             onchange = "this.form.submit();"
+            showon = "role:0"
         >
             <option value="">COM_SIAKUSER_SELECT_PRODI</option>
         </field>
@@ -33,6 +34,7 @@
             type    = "konsentrasi"
             label   = "COM_SIAKUSER_FILTER_KONSENTRASI_FIELD"
             onchange = "this.form.submit();"
+            showon = "role:0"
         >
             <option value="">COM_SIAKUSER_SELECT_KONSENTRASI</option>
         </field>

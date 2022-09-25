@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    
+    <fieldset name="user_akademik">
+        <field name="id" type="hidden" />
+        <field name = "user_id" type="hidden" />
+        <field 
+        name ="role" 
+        type="list" 
+        label="COM_USERSIAK_USER_FIELD_ROLE_LABEL" 
+        default = "0"
+        required="true">
+            <option value = "">COM_SIAKUSER_SELECT_ROLE_VALUE</option>
+            <option value = "0">COM_SIAKUSER_ROLE_MAHASISWA</option>
+            <option value = "1">COM_SIAKUSER_ROLE_STAFF_DOSEN</option>
+        </field>
+        <!-- Khusus Mahasiswa -->
+        <field 
+            name = "prodi"
+            type = "prodi"
+            label = "COM_SIAKUSER_USER_FIELD_PRODI_LABEL"
+            description = "COM_SIAKUSER_USER_FIELD_PRODI_DESC"
+            showon = "role:0"
+        >
+            <option value="">COM_SIAKUSER_SELECT_PRODI</option>
+        </field>
+
+        <field 
+            name = "jurusan"
+            type = "list"
+            label = "COM_SIAKUSER_USER_FIELD_JURUSAN_LABEL"
+            description = ""
+            showon = "role:0"
+        >
+            <option value="">COM_SIAKUSER_SELECT_KONSENTRASI</option>
+        </field>
+
+        <field 
+            name = "kelas"
+            type = "kelasmahasiswa"
+            label = "COM_SIAKUSER_USER_FIELD_KELAS_MAHASISWA_FIELD"
+            description = ""
+            showon = "role:0"
+        >
+            <option value="">COM_SIAKUSER_SELECT_KELAS_VALUE</option>
+        </field>
+
+        <field 
+            name = "angkatan"
+            type = "number"
+            label = "COM_SIAKUSER_USER_FIELD_ANGKATAN_LABEL"
+            description = "COM_SIAKUSER_USER_FIELD_ANGKATAN_DESC"
+            showon = "role:0"
+            min = "2000"
+            max = "2100"
+            step = "1"
+        />
+
+        <field
+            name = "tipe_user"
+            type = "list"
+            label = "COM_SIAKUSER_USER_FIELD_JENIS_MAHASISWA_LABEL"
+            default = "1"
+            showon = "role:0"
+        >
+            <option value="">COM_SIAKUSER_SELECT_STATUS_MAHASISWA_VALUE</option>
+            <option value = "1">COM_SIAKUSER_STATUS_MAHASISWA_REGULER_VALUE</option>
+            <option value = "2">COM_SIAKUSER_STATUS_MAHASISWA_PINDAHAN_VALUE</option>
+        </field>
+        <!-- End mahasiswa -->
+        <!-- Khusus Dosen / Staff -->
+        <field 
+            name = "nik"
+            type = "text"
+            label = "COM_SIAKUSER_USER_FIELD_NIK_LABEL"
+            description = "COM_SIAKUSER_USER_FIELD_NIK_DESC"
+            onchange = "this.value = this.value.toUpperCase();"
+            showon = "role:1"
+        />
+
+        <field 
+            name = "nidn"
+            label = "COM_SIAKUSER_USER_FIELD_NIDN_LABEL"
+            description = "COM_SIAKUSER_USER_FIELD_NIDN_DESC"
+            type = "text"
+            onchange = "this.value = this.value.toUpperCase();"
+            showon = "role:1"            
+        />
+        <!-- End khusus karyawan -->
+        
+        <field 
+            name = "status"
+            type = "list"
+            label = "COM_USERSIAK_USER_FIELD_STATUS_LABEL"
+            required = "true"
+            default = "1"
+        >
+            <option value = "">COM_SIAKUSER_SELECT_STATUS_VALUE</option>
+            <option value = "0">COM_SIAKUSER_STATUS_INACTIVE_VALUE</option>
+            <option value = "1">COM_SIAKUSER_STATUS_ACTIVE_VALUE</option>
+            <option value = "2">COM_SIAKUSER_STATUS_LULUS_VALUE</option>
+            <option value = "-1">COM_SIAKUSER_STATUS_REESIGN_VALUE</option>
+        </field>
+
+        <field 
+            name = "aktif"
+            type = "list"
+            label = "COM_SIAKUSER_USER_FIELD_IJIN_TRANSAKSI_LABEL"
+            required = "true"
+            default = "1"
+        >
+            <option value = "">COM_SIAKUSER_SELECT_TRANSAKSI_VALUE</option>
+            <option value = "1">COM_SIAKUSER_IJIN_TRANSAKSI_DIBUKA</option>
+            <option value = "0">COM_SIAKUSER_IJIN_TRANSAKSI_DITOLAK</option>
+        </field>
+
+        <field  
+            name        = "tanggal_masuk"
+            type        = "calendar"
+            label       = "COM_SIAKUSER_USER_FIELD_TANGGAL_MASUK_LABEL"
+            description = ""
+            class       = "input input-medium"
+            showtime    = "false"
+            filter      = "user_utc"
+            todaybutton = "false"
+            filltable   = "true"
+            translateformat="true"
+        />
+
+        <field  
+            name        = "tanggal_keluar"
+            type        = "calendar"
+            label       = "COM_SIAKUSER_USER_FIELD_TANGGAL_KELUAR_LABEL"
+            description = ""
+            class       = "input input-medium"
+            showtime    = "false"
+            filter      = "user_utc"
+            todaybutton = "false"
+            filltable   = "true"
+            translateformat="true"
+        />
+
+        <field  
+            name = "reset"
+            type = "radio"
+            label = "COM_SIAKUSER_USER_FIELD_RESET_DATA_LABEL"
+            class = "btn-group btn-group-yesno"
+            required = "true"
+            default = "0"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+
+    </fieldset>
+    <fieldset name="user_details">
+        <field 
+            name        = "no_ktp"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_NO_KTP_LABEL"
+            description = ""
+            class       = "input input-large"
+            hint        = "16 Digit no KTP"
+            pattern     = "[0-9].{15,15}"
+        />
+
+        <field  
+            name        = "pob"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_POB_LABEL"
+            description = ""
+            class       = "input input-large"
+            hint        = "Kab / Kota kelahiran"
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "dob"
+            type        = "calendar"
+            label       = "COM_SIAKUSER_USER_FIELD_DOB_LABEL"
+            description = ""
+            class       = "input input-medium"
+            showtime    = "false"
+            filter      = "user_utc"
+            todaybutton = "false"
+            filltable   = "true"
+            translateformat="true"
+        />
+
+        <field  
+            name        = "jenis_kelamin"
+            type        = "list"
+            label       = "COM_SIAKUSER_USER_FIELD_JENIS_KELAMIN_LABEL"
+            description = ""
+            class       = "input input-medium"
+        >
+        <option value = "">JGLOBAL_SELECT_AN_OPTION</option>
+        <option value = "LAKI LAKI">COM_SIAKUSER_LAKI_LAKI_VALUE</option>
+        <option value = "PEREMPUAN">COM_SIAKUSER_PEREMPUAN_VALUE</option>
+        </field>
+
+        <field
+            name        = "status_sipil"
+            type        = "list"
+            label       = "COM_SIAKUSER_USER_FIELD_STATUS_SIPIL_LABEL"
+            description = ""
+            class       = "input input-medium"
+        >
+        <option value = "">JGLOBAL_SELECT_AN_OPTION</option>
+        <option value = "Single">COM_SIAKUSER_SINGLE_VALUE</option>
+        <option value = "Menikah">COM_SIAKUSER_MENIKAH_VALUE</option>
+        </field>
+
+        <field  
+            name        = "alamat_1"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_ALAMAT_LINE_1_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            hint        = "Alamat Tempat Tinggal"
+            size        = "50"
+            maxlength   = "50"        
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "alamat_2"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_ALAMAT_LINE_2_LABEL"
+            description = ""
+            class       = "input input-xxlarge"
+            size        = "50"
+            maxlength   = "50" 
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "kelurahan"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_KELURAHAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            size        = "50"
+            maxlength   = "50" 
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "kecamatan"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_KECAMATAN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            size        = "50"
+            maxlength   = "50" 
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "kabupaten"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_KABUPATEN_LABEL"
+            description = ""
+            class       = "input input-medium"
+            size        = "50"
+            maxlength   = "50" 
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "propinsi"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_PROPINSI_LABEL"
+            description = ""
+            class       = "input input-medium"
+            size        = "50"
+            maxlength   = "50" 
+            onchange    = "this.value = this.value.toUpperCase();"
+        />
+
+        <field  
+            name        = "kode_pos"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_KODEPOS_LABEL"
+            description = ""
+            class       = "input input-small"
+            size        = "5"
+            maxlength   = "5" 
+            pattern     = "[0-9].{4,}"
+        />
+
+        <field  
+            name        = "telepon"
+            type        = "text"
+            label       = "COM_SIAKUSER_USER_FIELD_TELEPON_LABEL"
+            description = ""
+            class       = "input input-medium"
+            size        = "15"
+        />
+
+    </fieldset>
+</form>

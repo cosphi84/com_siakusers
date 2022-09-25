@@ -46,7 +46,7 @@ class SiakuserViewUsers extends HtmlView
         if($canDo->get('core.edit') || $canDo->get('core.edit.state'))
         {
             ToolbarHelper::editList('user.edit');
-            ToolbarHelper::custom('users.block', 'ban-circle', 'ban-circle', Text::_('COM_SIAKUSER_TOOLBAR_BLOCK'));
+            //ToolbarHelper::custom('users.block', 'ban-circle', 'ban-circle', Text::_('COM_SIAKUSER_TOOLBAR_BLOCK'));
             ToolbarHelper::custom('users.lock', 'lock', 'lock', Text::_('COM_SIAKUSER_TOOLBAR_LOCK'));
             ToolbarHelper::custom('users.unlock', 'unlock', 'unlock', Text::_('COM_SIAKUSER_TOOLBAR_UNLOCK'));
             ToolbarHelper::custom('users.lulus', 'flag', 'flag', Text::_('COM_SIAKUSER_TOOLBAR_LULUS'));
