@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fields name="filter">
+        <field 
+            name    = "search"
+            type    = "text"
+            label   = "JSEARCH_FILTER_LABEL"
+            hint    = "NPM / Nama / tahun:xxxx"
+        />
+
+        <field 
+            name    = "role"
+            type    = "list"
+            label   = "COM_SIAKUSER_FILTER_ROLE_FIELD"
+            onchange = "this.form.submit();"
+            >
+            <option value="">COM_SIAKUSER_SELECT_ROLE_VALUE</option>
+            <option value="0">COM_SIAKUSER_ROLE_MAHASISWA</option>
+            <option value="1">COM_SIAKUSER_ROLE_STAFF_DOSEN</option>
+        </field>
+
+        <field 
+            name    = "prodi"
+            type    = "prodi"
+            label   = "COM_SIAKUSER_FILTER_PRODI_FIELD"
+            onchange = "this.form.submit();"
+        >
+            <option value="">COM_SIAKUSER_SELECT_PRODI</option>
+        </field>
+
+        <field 
+            name    = "jurusan"
+            type    = "konsentrasi"
+            label   = "COM_SIAKUSER_FILTER_KONSENTRASI_FIELD"
+            onchange = "this.form.submit();"
+        >
+            <option value="">COM_SIAKUSER_SELECT_KONSENTRASI</option>
+        </field>
+
+        <field 
+            name    = "status"
+            type    = "list"
+            label   = "COM_SIAKUSER_FILTER_STATUS"
+            onchange = "this.form.submit();"
+        >
+            <option value="">COM_SIAKUSER_SELECT_STATUS</option>
+            <option value="0">COM_SIAKUSER_STATUS_INACTIVE_VALUE</option>
+            <option value="1">COM_SIAKUSER_STATUS_ACTIVE_VALUE</option>
+            <option value="2">COM_SIAKUSER_STATUS_LULUS_VALUE</option>
+            <option value="-1">COM_SIAKUSER_STATUS_REESIGN_VALUE</option>
+        </field>
+
+    </fields>
+    <fields name="list">
+        <field
+			name="fullordering"
+			type="list"
+			label="JSEARCH_TOOLS_ORDERING"
+			description=""
+			onchange="this.form.submit();"
+			default="a.id DESC"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="u.name ASC">COM_SIAKUSER_SORT_NAME_ASC</option>
+			<option value="u.name DESC">COM_SIAKUSER_SORT_NAME_DESC</option>
+			<option value="u.username ASC">COM_SIAKUSER_SORT_NPM_ASC</option>
+			<option value="u.username DESC">COM_SIAKUSER_SORT_NPM_DESC</option>
+			<option value="su.prodi ASC">COM_SIAKUSER_SORT_PRODI_ASC</option>
+			<option value="su.prodi DESC">COM_SIAKUSER_SORT_PRODI_DESC</option>
+			<option value="su.tahun ASC">COM_SIAKUSER_SORT_TAHUN_ASC</option>
+			<option value="su.tahun DESC">COM_SIAKUSER_SORT_TAHUN_DESC</option>
+			<option value="su.id DESC">JGRID_HEADING_ID_DESC</option>
+			<option value="su.id ASC">JGRID_HEADING_ID_ASC</option>
+		</field>	
+		<field
+			name="limit"
+			type="limitbox"
+			label="COM_CONTENT_LIST_LIMIT"
+			description="COM_CONTENT_LIST_LIMIT_DESC"
+			class="input-medium"
+			default="20"
+			onchange="this.form.submit();"
+		/>
+    </fields>
+</form>
